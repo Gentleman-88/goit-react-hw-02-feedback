@@ -1,18 +1,20 @@
+import css from './Statistics.module.css'
+
 const Statistics = ({ good, neutral, bad }) => {
     const total = good + neutral + bad;
     const positivePercentage = total ? Math.round((good / total) * 100) : 0;
     return (
         <div>
             {total ? ( 
-                <ul>
-                    <li>Good: {good}</li>
-                    <li>Neutral: {neutral}</li>
-                    <li>Bad: {bad}</li>
-                    <li>Total: {total}</li>
-                    <li>Positive feedback: {positivePercentage}%</li>
+                <ul className={css.Statistics_list}>
+                    <li className={css.statistics_item}>Good: {good}</li>
+                    <li className={css.statistics_item}>Neutral: {neutral}</li>
+                    <li className={css.statistics_item}>Bad: {bad}</li>
+                    <li className={css.statistics_item}>Total: {total}</li>
+                    <li className={css.statistics_item}>Positive feedback: {positivePercentage}%</li>
                 </ul>
             ) : (
-                    <p>No feedbacks yet</p>
+                    <p className={css.no_feedback_item}>No feedbacks yet</p>
             ) }
         </div>
     )

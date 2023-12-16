@@ -5,9 +5,9 @@ import { FeedbackOptions } from './Feedback/Feedback';
 
 export class App extends Component {
   state = {
-        good: 0,
-        neutral: 0,
-        bad: 0
+    good: 0,
+    neutral: 0,
+    bad: 0
   }
 
   render() {
@@ -20,16 +20,18 @@ export class App extends Component {
           />
         </Section>
         <Section title="Statistics">
-        <Statistics
-          good={this.state.good}
-          neutral={this.state.neutral}
-          bad={this.state.bad}
+          <Statistics
+            good={this.state.good}
+            neutral={this.state.neutral}
+            bad={this.state.bad}
+            total={this.total}
+            positivePercentage={this.positivePercentage}
           />
-          </Section>
+        </Section>
       </div>
     )
   }
   handleFeedback = option => {
-    this.setState(prevState => ({[option]: prevState[option] + 1}))
+    this.setState(prevState => ({ [option]: prevState[option] + 1 }))
   }
 };
