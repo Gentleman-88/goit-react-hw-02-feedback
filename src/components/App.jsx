@@ -28,7 +28,7 @@ export class App extends Component {
             onLeaveFeedback={this.handleFeedback}
           />  
         </Section>
-        {this.total > 0 ? (
+        {this.countTotalFeedback() > 0 ? (
           <Section title="Statistics">
             <Statistics
               good={this.state.good}
