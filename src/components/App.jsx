@@ -12,11 +12,11 @@ export class App extends Component {
   }
 
   countTotalFeedback = () => {
-  const total = this.state.good + this.state.neutral + this.state.bad;
+    return this.state.good + this.state.neutral + this.state.bad;
   }
 
   positivePercentage = () => {
-    const positivePercentage = this.total ? Math.round((this.state.good / this.total) * 100) : 0;
+    return this.total ? Math.round((this.state.good / this.total) * 100) : 0;
   }
 
   render() {
