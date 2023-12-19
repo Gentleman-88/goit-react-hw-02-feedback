@@ -11,6 +11,10 @@ export class App extends Component {
     bad: 0
   }
 
+  handleFeedback = option => {
+    this.setState(prevState => ({ [option]: prevState[option] + 1 }))
+  }
+
   countTotalFeedback = () => {
     const { good, neutral, bad } = this.state;
     return good + neutral + bad;
@@ -46,8 +50,5 @@ export class App extends Component {
         )}
       </div>
     )
-  }
-  handleFeedback = option => {
-    this.setState(prevState => ({ [option]: prevState[option] + 1 }))
   }
 };
